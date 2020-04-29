@@ -26,4 +26,9 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.jmock:jmock-junit4:2.12.0'
+    testImplementation 'org.jmock:jmock-imposters:2.12.0'
+    testImplementation 'org.easymock:easymock:4.2'
+    testImplementation 'org.mockito:mockito-core:3.3.3'
 }
