@@ -13,7 +13,7 @@ Throughout, I use the terminology defined by Gerard Meszaros in his book
 All example were tested with JUnit 3.8.2, jMock 2.12, EasyMock 4.3, and Mockito
 3.3.3 using Java 8.
 
-#### DISCLAIMER (2009)
+#### DISCLAIMER (2008)
 
 I like jMock a lot more than I like EasyMock.  The DSL for specifying
 expectations in jMock takes some getting used to, but it is more expressive
