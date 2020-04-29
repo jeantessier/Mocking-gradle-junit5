@@ -31,11 +31,11 @@ in 2020, had a top three of:
 1. EasyMock (a very distant third)
 
 I don't know JMockIt, but there has been very  little development, as of late,
-on both  JMock and EasyMock.
+on either JMock or EasyMock.
 
-For my part, my new favorite framework on the JVM is [Spock](http://spockframework.org/).
-It uses Groovy to write the tests and they have much more of a BDD feel to them.
-It's support for mocking is also top notch.
+For my part, my new favorite testing framework on the JVM is
+[Spock](http://spockframework.org/).  It uses Groovy to write the tests, which
+have a much more BDD feel to them.  It's support for mocking is also top notch.
 
 ## Introduction
 
