@@ -3,9 +3,9 @@
 by [Jean Tessier](https://jeantessier.com/)
 
 This document shows how to do common mocking tasks in Java using both
-[jMock](http://www.jmock.org),
-[EasyMock](http://easymock.org),
-and [Mockito](http://code.google.com/p/mockito).
+[jMock](http://jmock.org/),
+[EasyMock](https://easymock.org/),
+and [Mockito](https://easymock.org/).
 
 Throughout, I use the terminology defined by Gerard Meszaros in his book
 [xUnit Test Patterns](http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Addison-Wesley/dp/0131495054/ref%3Dpd%5Fbbs%5Fsr%5F1/104-7143783-6750325?ie%3DUTF8&s%3Dbooks&qid%3D1188541102&sr%3D8-1).
@@ -30,8 +30,8 @@ in 2020, had a top three of:
 1. JMockIt
 1. EasyMock (a very distant third)
 
-I don't know JMockIt, but there has been very  little development, as of late,
-on either JMock or EasyMock.
+There has been very little development, of late, on either JMock or EasyMock.
+In the meantime, Mockito has been on a tear.  I don't know JMockIt.
 
 For my part, my new favorite testing framework on the JVM is
 [Spock](http://spockframework.org/).  It uses Groovy to write the tests, which
@@ -45,21 +45,21 @@ normal environment of the _SUT_ (_System Under Test_).  Mocks replace the SUT's
 _DOCs_ (_Depended-On Components_) and give you fine control on how the SUT
 interacts with its environment and what messages it gets back from it.
 
-### jMock
+#### jMock ([jmock.org](http://jmock.org/))
 
 jMock focuses on explicitly specifying the behavior of the mocks using a
 specialized _DSL_ (_Domain-Specific Language_) embeded in the Java code.  The
 notation takes some getting used to, but it makes the specification of behavior
 stand out in the test code.
 
-### EasyMock
+#### EasyMock ([easymock.org](https://easymock.org/))
 
 EasyMock takes a record/replay approach.  You first train the mock by making
 the expected method calls on it yourself.  You then switch the mock into
 replay-mode before exercising the SUT.  Specifying the behavior is just regular
 method calls on a typed Java object.
 
-### Mockito
+#### Mockito ([mockito.org](https://site.mockito.org/))
 
 Mockito takes a different approach.  Whereas jMock and EasyMock try to specify
 the behavior fully beforehand, Mockito simply records everything
