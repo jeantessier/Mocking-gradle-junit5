@@ -1,6 +1,8 @@
 import junit.framework.TestCase;
-import static org.easymock.EasyMock.*;
 import org.easymock.IMocksControl;
+
+import static org.easymock.EasyMock.createStrictControl;
+import static org.easymock.EasyMock.expect;
 
 public class SequenceTwoMocks_EasyMock extends TestCase {
     public void testSequence() {

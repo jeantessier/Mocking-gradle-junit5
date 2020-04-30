@@ -18,12 +18,12 @@ public abstract class MockObjectTestCase extends TestCase {
         context.setImposteriser(imposteriser);
     }
 
-    protected <T> T mock(Class<T> typeToMock) {
-        return context.mock(typeToMock);
+    protected <T, R> R mock(Class<?> typeToMock) {
+        return context.mock((Class<R>) typeToMock);
     }
 
-    protected <T> T mock(Class<T> typeToMock, String name) {
-        return context.mock(typeToMock, name);
+    protected <T, R> R mock(Class<?> typeToMock, String name) {
+        return context.mock((Class<R>) typeToMock, name);
     }
 
     protected Sequence sequence(String name) {

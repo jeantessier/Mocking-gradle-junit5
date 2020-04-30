@@ -1,5 +1,9 @@
 import junit.framework.TestCase;
-import static org.easymock.EasyMock.*;
+
+import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 
 public class SequenceOneMock_EasyMock extends TestCase {
     public void testSequence() {

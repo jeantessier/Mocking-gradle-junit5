@@ -16,7 +16,7 @@ public class CacheTest_EasyMock extends TestCase {
     public void testMethodWithReturnValue() {
         int expectedValue = 42;
 
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         expect(mockStorage.size()).andReturn(expectedValue);
         replay(mockStorage);
 
@@ -30,7 +30,7 @@ public class CacheTest_EasyMock extends TestCase {
     public void testMethodWithReturnValueThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         expect(mockStorage.size()).andThrow(expectedException);
         replay(mockStorage);
 
@@ -46,7 +46,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testVoidMethod() {
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         mockStorage.clear();
         replay(mockStorage);
 
@@ -59,7 +59,7 @@ public class CacheTest_EasyMock extends TestCase {
     public void testVoidMethodThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         mockStorage.clear();
         expectLastCall().andThrow(expectedException);
         replay(mockStorage);
@@ -79,7 +79,7 @@ public class CacheTest_EasyMock extends TestCase {
         int key = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         expect(mockStorage.get(key)).andReturn(expectedValue);
         replay(mockStorage);
 
@@ -94,8 +94,8 @@ public class CacheTest_EasyMock extends TestCase {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = createMock(Map.class);
-        expect(mockStorage.put(expectedKey, expectedValue)).andReturn(true);
+        Map<Integer, String> mockStorage = createMock(Map.class);
+        expect(mockStorage.put(expectedKey, expectedValue)).andReturn(null);
         replay(mockStorage);
 
         Cache sut = new Cache(mockStorage);
@@ -108,8 +108,8 @@ public class CacheTest_EasyMock extends TestCase {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = createMock(Map.class);
-        expect(mockStorage.put(gt(40), find("two"))).andReturn(true);
+        Map<Integer, String> mockStorage = createMock(Map.class);
+        expect(mockStorage.put(gt(40), find("two"))).andReturn(null);
         replay(mockStorage);
 
         Cache sut = new Cache(mockStorage);
@@ -119,7 +119,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testIgnoreMethodCall() {
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         mockStorage.clear();
         expect(mockStorage.size()).andStubReturn(42);
         replay(mockStorage);
@@ -131,7 +131,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testIgnoreObject() {
-        Map mockStorage = createNiceMock(Map.class);
+        Map<Integer, String> mockStorage = createNiceMock(Map.class);
         replay(mockStorage);
 
         Cache sut = new Cache(mockStorage);
@@ -141,7 +141,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testMultipleCalls() {
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         expect(mockStorage.size()).andReturn(42).times(2);
         mockStorage.clear();
         replay(mockStorage);
@@ -153,7 +153,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testSequenceOnOneMock() {
-        Map mockStorage = createStrictMock(Map.class);
+        Map<Integer, String> mockStorage = createStrictMock(Map.class);
         expect(mockStorage.size()).andReturn(42);
         mockStorage.clear();
         replay(mockStorage);
@@ -165,7 +165,7 @@ public class CacheTest_EasyMock extends TestCase {
     }
 
     public void testPartialMock() {
-        Map mockStorage = createMock(Map.class);
+        Map<Integer, String> mockStorage = createMock(Map.class);
         mockStorage.clear();
         expect(mockStorage.size()).andStubReturn(42);
         replay(mockStorage);

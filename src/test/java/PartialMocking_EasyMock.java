@@ -1,6 +1,5 @@
 import junit.framework.TestCase;
 
-import java.lang.reflect.Method;
 import java.util.Map;
 
 import static org.easymock.EasyMock.createMock;
@@ -11,8 +10,8 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
 public class PartialMocking_EasyMock extends TestCase {
-    public void testPartialMocking() throws Exception {
-        Map mockStorage = createMock(Map.class);
+    public void testPartialMocking() {
+        Map<Integer, String> mockStorage = createMock(Map.class);
         mockStorage.clear();
         expect(mockStorage.size()).andStubReturn(42);
 

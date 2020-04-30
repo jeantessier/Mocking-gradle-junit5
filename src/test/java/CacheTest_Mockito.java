@@ -16,7 +16,7 @@ public class CacheTest_Mockito extends TestCase {
     public void testMethodWithReturnValue() {
         int expectedValue = 42;
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenReturn(expectedValue);
 
         Cache sut = new Cache(mockStorage);
@@ -29,7 +29,7 @@ public class CacheTest_Mockito extends TestCase {
     public void testMethodWithReturnValueThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenThrow(expectedException);
 
         Cache sut = new Cache(mockStorage);
@@ -44,7 +44,7 @@ public class CacheTest_Mockito extends TestCase {
     }
 
     public void testVoidMethod() {
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.clear();
@@ -55,7 +55,7 @@ public class CacheTest_Mockito extends TestCase {
     public void testVoidMethodThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         doThrow(expectedException).when(mockStorage).clear();
 
         Cache sut = new Cache(mockStorage);
@@ -73,7 +73,7 @@ public class CacheTest_Mockito extends TestCase {
         int key = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.get(key)).thenReturn(expectedValue);
 
         Cache sut = new Cache(mockStorage);
@@ -87,7 +87,7 @@ public class CacheTest_Mockito extends TestCase {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.add(expectedKey, expectedValue);
@@ -99,7 +99,7 @@ public class CacheTest_Mockito extends TestCase {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.add(expectedKey, expectedValue);
@@ -111,7 +111,7 @@ public class CacheTest_Mockito extends TestCase {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.add(expectedKey, expectedValue);
@@ -120,7 +120,7 @@ public class CacheTest_Mockito extends TestCase {
     }
 
     public void testIgnoreMethodCall() {
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.logAndClear();
@@ -129,14 +129,14 @@ public class CacheTest_Mockito extends TestCase {
     }
 
     public void testIgnoreObject() {
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.logAndClear();
     }
 
     public void testMultipleCalls() {
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenReturn(42);
 
         Cache sut = new Cache(mockStorage);
@@ -147,7 +147,7 @@ public class CacheTest_Mockito extends TestCase {
     }
 
     public void testSequenceOnOneMock() {
-        Map mockStorage = mock(Map.class);
+        Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenReturn(42);
         InOrder inOrder = inOrder(mockStorage);
 

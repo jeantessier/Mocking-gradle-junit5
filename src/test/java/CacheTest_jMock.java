@@ -10,7 +10,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     public void testMethodWithReturnValue() {
         final int expectedValue = 42;
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
         
         checking(new Expectations() {{
             oneOf (mockStorage).size();
@@ -25,7 +25,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     public void testMethodWithReturnValueThrowsAnException() {
         final Exception expectedException = new RuntimeException();
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).size();
@@ -42,7 +42,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     }
 
     public void testVoidMethod() {
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).clear();
@@ -55,7 +55,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     public void testVoidMethodThrowsAnException() {
         final Exception expectedException = new RuntimeException();
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).clear();
@@ -75,7 +75,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
         final int key = 42;
         final String expectedValue = "forty-two";
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).get(key);
@@ -91,7 +91,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
         final int expectedKey = 42;
         final String expectedValue = "forty-two";
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).put(expectedKey, expectedValue);
@@ -106,7 +106,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
         final int expectedKey = 42;
         final String expectedValue = "forty-two";
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).put(with(greaterThan(40)), with(containsString("two")));
@@ -121,7 +121,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
         final int expectedKey = 42;
         final String expectedValue = "forty-two";
 
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).put(expectedKey, expectedValue);
@@ -132,7 +132,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     }
 
     public void testIgnoreMethodCall() {
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             oneOf (mockStorage).clear();
@@ -145,7 +145,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     }
 
     public void testIgnoreObject() {
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             ignoring (mockStorage);
@@ -156,7 +156,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     }
 
     public void testMultipleCalls() {
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
 
         checking(new Expectations() {{
             exactly(2).of (mockStorage).size();
@@ -169,7 +169,7 @@ public class CacheTest_jMock extends MockObjectTestCase {
     }
 
     public void testSequenceOnOneMock() {
-        final Map mockStorage = mock(Map.class);
+        final Map<Integer, String> mockStorage = mock(Map.class);
         final Sequence clearSequence = sequence("clear");
 
         checking(new Expectations() {{

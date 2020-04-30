@@ -21,7 +21,7 @@ public class SideEffect_jMock extends MockObjectTestCase {
 
     private Action addToListParameter(final int i, final Object object) {
         return new CustomAction("Add a value to a list") {
-            public Object invoke(Invocation invocation) throws Throwable {
+            public Object invoke(Invocation invocation) {
                 ((List) invocation.getParameter(i)).add(object);
                 return null;
             }
