@@ -29,6 +29,6 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'org.jmock:jmock-junit4:2.12.0'
     testImplementation 'org.jmock:jmock-imposters:2.12.0'
-    testImplementation 'org.easymock:easymock:4.2'
-    testImplementation 'org.mockito:mockito-core:3.3.3'
+    testImplementation 'org.easymock:easymock:4.3'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
 }
