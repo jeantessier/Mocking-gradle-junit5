@@ -30,5 +30,5 @@ dependencies {
     testImplementation 'org.jmock:jmock-junit4:2.12.0'
     testImplementation 'org.jmock:jmock-imposters:2.12.0'
     testImplementation 'org.easymock:easymock:4.3'
-    testImplementation 'org.mockito:mockito-core:4.2.0'
+    testImplementation 'org.mockito:mockito-core:4.3.1'
 }
