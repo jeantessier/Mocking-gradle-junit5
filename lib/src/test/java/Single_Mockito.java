@@ -1,6 +1,7 @@
 import junit.framework.TestCase;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 public class Single_Mockito extends TestCase {
@@ -10,6 +11,7 @@ public class Single_Mockito extends TestCase {
 
         // Setup SUT with mock and exercise here
 
-        verify(mockSome);
+        // Verify calls to the mock after the fact
+        // verify(mockSome).someMethod();
     }
 }
