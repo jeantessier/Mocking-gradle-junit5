@@ -35,7 +35,7 @@ In the meantime, Mockito has been on a tear.  I don't know JMockIt.
 
 For my part, my new favorite testing framework on the JVM is
 [Spock](http://spockframework.org/).  It uses Groovy to write the tests, which
-have a much more BDD feel to them.  It's support for mocking is also top notch.
+have a much more BDD feel to them.  It's support for mocking is also top-notch.
 
 ## Introduction
 
@@ -48,7 +48,7 @@ interacts with its environment and what messages it gets back from it.
 #### jMock ([jmock.org](http://jmock.org/))
 
 jMock focuses on explicitly specifying the behavior of the mocks using a
-specialized _DSL_ (_Domain-Specific Language_) embeded in the Java code.  The
+specialized _DSL_ (_Domain-Specific Language_) embedded in the Java code.  The
 notation takes some getting used to, but it makes the specification of behavior
 stand out in the test code.
 
@@ -75,8 +75,8 @@ Mockito uses test spies rather than mocks to simulate the DOCs.
 
 ----
 
-Date | Edit
----- | ----
-2008-05-29 | First draft.
-2008-11-20 | Last substantial edit.
-2020-04-29 | Making sure it all still works with the latest versions.
+| Date       | Edit                                                     |
+|------------|----------------------------------------------------------|
+| 2008-05-29 | First draft.                                             |
+| 2008-11-20 | Last substantial edit.                                   |
+| 2020-04-29 | Making sure it all still works with the latest versions. |
