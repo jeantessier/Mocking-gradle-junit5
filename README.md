@@ -10,8 +10,12 @@ and [Mockito](https://easymock.org/).
 Throughout, I use the terminology defined by Gerard Meszaros in his book
 [xUnit Test Patterns](http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Addison-Wesley/dp/0131495054/ref%3Dpd%5Fbbs%5Fsr%5F1/104-7143783-6750325?ie%3DUTF8&s%3Dbooks&qid%3D1188541102&sr%3D8-1).
 
-All example were tested with JUnit 4, jMock 2.12, EasyMock 5.2.0, and Mockito
-5.7.0 using Java 21.
+All example were tested with JUnit Jupiter, jMock 2.13, EasyMock 5.2.0, and 
+Mockito 5.12.0 using Java 21.
+
+Alternative versions:
+[JUnit 4](https://github.com/jeantessier/Mocking-gradle-junit4/blob/main/README.md),
+JUnit 5
 
 #### DISCLAIMER (2008)
 
@@ -80,3 +84,4 @@ Mockito uses test spies rather than mocks to simulate the DOCs.
 | 2008-05-29 | First draft.                                             |
 | 2008-11-20 | Last substantial edit.                                   |
 | 2020-04-29 | Making sure it all still works with the latest versions. |
+| 2025-01-08 | Convert JUnit 4 code to JUnit Jupiter.                   |

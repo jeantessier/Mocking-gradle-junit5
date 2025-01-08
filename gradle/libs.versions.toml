@@ -14,9 +14,10 @@ junit = { module = "junit:junit", version.ref = "junit" }
 hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest" }
 byte-buddy = { module = "net.bytebuddy:byte-buddy", version.ref = "byte-buddy" }
 jmock-junit4 = { module = "org.jmock:jmock-junit4", version.ref = "jmock" }
+jmock-junit5 = { module = "org.jmock:jmock-junit5", version.ref = "jmock" }
 jmock-imposters = { module = "org.jmock:jmock-imposters", version.ref = "jmock" }
 easymock = { module = "org.easymock:easymock", version.ref = "easymock" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 
 [bundles]
-jmock = ["byte-buddy", "jmock-junit4", "jmock-imposters"]
+jmock = ["byte-buddy", "jmock-junit4", "jmock-junit5", "jmock-imposters"]
