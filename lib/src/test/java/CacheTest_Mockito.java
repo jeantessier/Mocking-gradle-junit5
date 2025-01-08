@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
 
 import java.util.Map;
@@ -11,9 +11,12 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.fail;
 
-public class CacheTest_Mockito extends TestCase {
-    public void testMethodWithReturnValue() {
+public class CacheTest_Mockito {
+    @Test
+    void testMethodWithReturnValue() {
         int expectedValue = 42;
 
         Map<Integer, String> mockStorage = mock(Map.class);
@@ -26,7 +29,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).size();
     }
 
-    public void testMethodWithReturnValueThrowsAnException() {
+    @Test
+    void testMethodWithReturnValueThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
         Map<Integer, String> mockStorage = mock(Map.class);
@@ -43,7 +47,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).size();
     }
 
-    public void testVoidMethod() {
+    @Test
+    void testVoidMethod() {
         Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
@@ -52,7 +57,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).clear();
     }
 
-    public void testVoidMethodThrowsAnException() {
+    @Test
+    void testVoidMethodThrowsAnException() {
         Exception expectedException = new RuntimeException();
 
         Map<Integer, String> mockStorage = mock(Map.class);
@@ -69,7 +75,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).clear();
     }
 
-    public void testMethodWithParameter() {
+    @Test
+    void testMethodWithParameter() {
         int key = 42;
         String expectedValue = "forty-two";
 
@@ -83,7 +90,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).get(key);
     }
 
-    public void testExactParams() {
+    @Test
+    void testExactParams() {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
@@ -95,7 +103,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).put(expectedKey, expectedValue);
     }
 
-    public void testFuzzyParams() {
+    @Test
+    void testFuzzyParams() {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
@@ -107,7 +116,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).put(geq(40), contains("two"));
     }
 
-    public void testIgnoreReturnValue() {
+    @Test
+    void testIgnoreReturnValue() {
         int expectedKey = 42;
         String expectedValue = "forty-two";
 
@@ -119,7 +129,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).put(expectedKey, expectedValue);
     }
 
-    public void testIgnoreMethodCall() {
+    @Test
+    void testIgnoreMethodCall() {
         Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
@@ -128,14 +139,16 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).clear();
     }
 
-    public void testIgnoreObject() {
+    @Test
+    void testIgnoreObject() {
         Map<Integer, String> mockStorage = mock(Map.class);
 
         Cache sut = new Cache(mockStorage);
         sut.logAndClear();
     }
 
-    public void testMultipleCalls() {
+    @Test
+    void testMultipleCalls() {
         Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenReturn(42);
 
@@ -146,7 +159,8 @@ public class CacheTest_Mockito extends TestCase {
         verify(mockStorage).clear();
     }
 
-    public void testSequenceOnOneMock() {
+    @Test
+    void testSequenceOnOneMock() {
         Map<Integer, String> mockStorage = mock(Map.class);
         when(mockStorage.size()).thenReturn(42);
         InOrder inOrder = inOrder(mockStorage);

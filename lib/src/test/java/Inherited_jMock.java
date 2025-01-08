@@ -1,5 +1,8 @@
+import org.junit.jupiter.api.Test;
+
 public class Inherited_jMock extends MockObjectTestCase {
-    public void testSome() {
+    @Test
+    void testSome() {
         SomeInterface mockSome = mock(SomeInterface.class);
         // Program the mocks here
 

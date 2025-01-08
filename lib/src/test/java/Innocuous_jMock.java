@@ -1,7 +1,11 @@
 import org.jmock.Expectations;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Innocuous_jMock extends MockObjectTestCase {
-    public void testSimple() {
+    @Test
+    void testSimple() {
         final int expectedValue = 0;
 
         final SimpleInterface mockSimple = mock(SimpleInterface.class);

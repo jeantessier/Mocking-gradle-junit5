@@ -1,8 +1,10 @@
 import org.jmock.Expectations;
 import org.jmock.Sequence;
+import org.junit.jupiter.api.Test;
 
 public class SequenceOneMock_jMock extends MockObjectTestCase {
-    public void testSequence() {
+    @Test
+    void testSequence() {
         final SimpleInterface mockSimple = mock(SimpleInterface.class);
         final Sequence simpleSequence = sequence("simple");
 

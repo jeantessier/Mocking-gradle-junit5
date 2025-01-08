@@ -1,7 +1,11 @@
 import org.jmock.Expectations;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class VoidAndReturnType_jMock extends MockObjectTestCase {
-    public void testVoidAndReturnType() {
+    @Test
+    void testVoidAndReturnType() {
         final VoidAndReturnType mockVoidAndReturnType = mock(VoidAndReturnType.class);
 
         checking(new Expectations() {{
@@ -13,7 +17,8 @@ public class VoidAndReturnType_jMock extends MockObjectTestCase {
         sut.callVoidAndReturnType();
     }
 
-    public void testVoidThrows() {
+    @Test
+    void testVoidThrows() {
         final VoidAndReturnType mockVoidAndReturnType = mock(VoidAndReturnType.class);
 
         checking(new Expectations() {{
@@ -31,7 +36,8 @@ public class VoidAndReturnType_jMock extends MockObjectTestCase {
         }
     }
 
-    public void testReturnTypeThrows() {
+    @Test
+    void testReturnTypeThrows() {
         final VoidAndReturnType mockVoidAndReturnType = mock(VoidAndReturnType.class);
 
         checking(new Expectations() {{

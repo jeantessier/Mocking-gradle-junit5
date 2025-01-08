@@ -1,11 +1,13 @@
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 import static org.easymock.EasyMock.createNiceMock;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Innocuous_EasyMock extends TestCase {
-    public void testSimple() {
+public class Innocuous_EasyMock {
+    @Test
+    void testSimple() {
         int expectedValue = 0;
 
         SimpleInterface mockSimple = createNiceMock(SimpleInterface.class);

@@ -1,13 +1,14 @@
-import junit.framework.TestCase;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-@Ignore("EasyMock doesn't mock classes")
-public class Class_EasyMock extends TestCase {
-    public void testSome() {
+@Disabled("EasyMock doesn't mock classes")
+public class Class_EasyMock {
+    @Test
+    void testSome() {
         SomeClass mockSome = createMock(SomeClass.class);
         // Program the mocks here
         replay(mockSome);

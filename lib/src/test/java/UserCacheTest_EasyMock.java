@@ -1,5 +1,5 @@
-import junit.framework.TestCase;
 import org.easymock.IMocksControl;
+import org.junit.jupiter.api.Test;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createNiceMock;
@@ -9,8 +9,9 @@ import static org.easymock.EasyMock.isA;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-public class UserCacheTest_EasyMock extends TestCase {
-    public void testInnocuousValue() {
+public class UserCacheTest_EasyMock {
+    @Test
+    void testInnocuousValue() {
         int key = 42;
 
         Storage mockStorage = createNiceMock(Storage.class);
@@ -24,7 +25,7 @@ public class UserCacheTest_EasyMock extends TestCase {
         verify(mockStorage, mockLogger);
     }
 
-    public void testSequenceOnTwoMocks() {
+    @Test void testSequenceOnTwoMocks() {
         int expectedKey = 42;
 
         IMocksControl control = createStrictControl();

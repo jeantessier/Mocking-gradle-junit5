@@ -1,17 +1,13 @@
-import junit.framework.TestCase;
-import org.jmock.integration.junit4.JUnitRuleMockery;
-import org.junit.Rule;
+import org.jmock.junit5.JUnit5Mockery;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
-public class Multiple_jMock extends TestCase {
-    @Rule
-    public final JUnitRuleMockery context = new JUnitRuleMockery();
+public class Multiple_jMock {
+    @RegisterExtension
+    JUnit5Mockery context = new JUnit5Mockery();
 
-    protected void runTest() throws Throwable {
-        super.runTest();
-        context.assertIsSatisfied();
-    }
-    
-    public void testSome() {
+    @Test
+    void testSome() {
         SomeInterface mockSome = context.mock(SomeInterface.class);
         SomeOtherInterface mockSomeOther = context.mock(SomeOtherInterface.class);
         // Program the mocks here

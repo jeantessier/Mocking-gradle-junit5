@@ -1,8 +1,10 @@
 import org.jmock.Expectations;
 import org.jmock.Sequence;
+import org.junit.jupiter.api.Test;
 
 public class UserCacheTest_jMock extends MockObjectTestCase {
-    public void testInnocuousValue() {
+    @Test
+    void testInnocuousValue() {
         final int key = 42;
 
         final Storage mockStorage = mock(Storage.class);
@@ -17,7 +19,7 @@ public class UserCacheTest_jMock extends MockObjectTestCase {
         sut.getAndLog(key);
     }
 
-    public void testSequenceOnTwoMocks() {
+    @Test void testSequenceOnTwoMocks() {
         final int key = 42;
 
         final Storage mockStorage = mock(Storage.class);

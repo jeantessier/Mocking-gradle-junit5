@@ -1,11 +1,12 @@
-import junit.framework.TestCase;
 import org.easymock.IMocksControl;
+import org.junit.jupiter.api.Test;
 
 import static org.easymock.EasyMock.createStrictControl;
 import static org.easymock.EasyMock.expect;
 
-public class SequenceTwoMocks_EasyMock extends TestCase {
-    public void testSequence() {
+public class SequenceTwoMocks_EasyMock {
+    @Test
+    void testSequence() {
         int somedValue = 42;
 
         IMocksControl control = createStrictControl();

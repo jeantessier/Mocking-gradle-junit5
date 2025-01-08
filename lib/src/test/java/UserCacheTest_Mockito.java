@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
 
 import static org.mockito.Mockito.anyString;
@@ -6,8 +6,9 @@ import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class UserCacheTest_Mockito extends TestCase {
-    public void testInnocuousValue() {
+public class UserCacheTest_Mockito {
+    @Test
+    void testInnocuousValue() {
         int key = 42;
 
         Storage mockStorage = mock(Storage.class);
@@ -20,7 +21,7 @@ public class UserCacheTest_Mockito extends TestCase {
         verify(mockLogger).log(anyString());
     }
 
-    public void testSequenceOnTwoMocks() {
+    @Test void testSequenceOnTwoMocks() {
         int key = 42;
 
         Storage mockStorage = mock(Storage.class);

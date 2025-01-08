@@ -1,5 +1,8 @@
+import org.junit.jupiter.api.Test;
+
 public class Inherited_EasyMock extends EasyMockTestCase {
-    public void testSome() {
+    @Test
+    void testSome() {
         SomeInterface mockSome = createMock(SomeInterface.class);
         // Program the mocks here
         replay();

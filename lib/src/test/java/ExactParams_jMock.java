@@ -1,7 +1,9 @@
 import org.jmock.Expectations;
+import org.junit.jupiter.api.Test;
 
 public class ExactParams_jMock extends MockObjectTestCase {
-    public void testTwoParams() {
+    @Test
+    void testTwoParams() {
         final int intValue = 42;
         final String textValue = "forty-two";
 

@@ -1,8 +1,11 @@
-import junit.framework.TestCase;
-import static org.easymock.EasyMock.*;
+import org.junit.jupiter.api.Test;
 
-public class IgnoringMethod_EasyMock extends TestCase {
-    public void testSimple() {
+import static org.easymock.EasyMock.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class IgnoringMethod_EasyMock {
+    @Test
+    void testSimple() {
         int expectedValue = 42;
 
         SimpleInterface mockSimple = createMock(SimpleInterface.class);

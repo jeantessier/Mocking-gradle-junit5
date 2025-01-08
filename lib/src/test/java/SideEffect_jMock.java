@@ -2,11 +2,15 @@ import org.jmock.Expectations;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import org.jmock.lib.action.CustomAction;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class SideEffect_jMock extends MockObjectTestCase {
-    public void testSideEffect() {
+    @Test
+    void testSideEffect() {
         final Populator mockPopulator = mock(Populator.class);
 
         checking(new Expectations() {{

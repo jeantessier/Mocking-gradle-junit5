@@ -1,13 +1,15 @@
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.jupiter.api.Assertions.fail;
 
-public class VoidAndReturnType_EasyMock extends TestCase {
-    public void testVoidAndReturnType() {
+public class VoidAndReturnType_EasyMock {
+    @Test
+    void testVoidAndReturnType() {
         VoidAndReturnType mockVoidAndReturnType = createMock(VoidAndReturnType.class);
 
         mockVoidAndReturnType.methodWithVoid();
@@ -21,7 +23,7 @@ public class VoidAndReturnType_EasyMock extends TestCase {
         verify(mockVoidAndReturnType);
     }
 
-    public void testVoidThrows() {
+    @Test void testVoidThrows() {
         VoidAndReturnType mockVoidAndReturnType = createMock(VoidAndReturnType.class);
 
         mockVoidAndReturnType.methodWithVoid();
@@ -40,7 +42,8 @@ public class VoidAndReturnType_EasyMock extends TestCase {
         verify(mockVoidAndReturnType);
     }
 
-    public void testReturnTypeThrows() {
+    @Test
+    void testReturnTypeThrows() {
         VoidAndReturnType mockVoidAndReturnType = createMock(VoidAndReturnType.class);
 
         expect(mockVoidAndReturnType.methodWithReturnType()).andThrow(new RuntimeException());

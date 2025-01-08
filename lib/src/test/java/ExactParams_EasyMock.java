@@ -1,8 +1,10 @@
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
+
 import static org.easymock.EasyMock.*;
 
-public class ExactParams_EasyMock extends TestCase {
-    public void testSimple() {
+public class ExactParams_EasyMock {
+    @Test
+    void testSimple() {
         int intValue = 42;
         String textValue = "forty-two";
 

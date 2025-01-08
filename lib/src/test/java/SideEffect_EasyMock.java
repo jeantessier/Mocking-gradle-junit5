@@ -1,5 +1,5 @@
-import junit.framework.TestCase;
 import org.easymock.IAnswer;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -9,9 +9,11 @@ import static org.easymock.EasyMock.getCurrentArguments;
 import static org.easymock.EasyMock.isA;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SideEffect_EasyMock extends TestCase {
-    public void testSideEffect() {
+public class SideEffect_EasyMock {
+    @Test
+    void testSideEffect() {
         Populator mockPopulator = createMock(Populator.class);
         mockPopulator.populate(isA(List.class));
         expectLastCall().andAnswer(addToListParameter(0, new Object()));

@@ -1,10 +1,12 @@
 import org.jmock.Expectations;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThan;
 
 public class FuzzyParams_jMock extends MockObjectTestCase {
-    public void testTwoParams() {
+    @Test
+    void testTwoParams() {
         final int intValue = 42;
         final String textValue = "forty-two";
 

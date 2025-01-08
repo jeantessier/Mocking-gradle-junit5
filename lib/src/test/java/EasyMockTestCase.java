@@ -1,18 +1,12 @@
-import junit.framework.TestCase;
 import org.easymock.IMocksControl;
 import org.easymock.EasyMock;
+import org.junit.jupiter.api.AfterEach;
 
-public abstract class EasyMockTestCase extends TestCase {
-    private IMocksControl control;
+public abstract class EasyMockTestCase {
+    private final IMocksControl control = EasyMock.createControl();
 
-    protected void setUp() throws Exception {
-        super.setUp();
-
-        control = EasyMock.createControl();
-    }
-
-    protected void runTest() throws Throwable {
-        super.runTest();
+    @AfterEach
+    void runTest() {
         control.verify();
     }
 
