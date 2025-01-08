@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation(libs.junit)
+    // Use JUnit Jupiter test framework.
+    testImplementation(libs.junit.jupiter)
 
     testImplementation(libs.hamcrest)
     testImplementation(libs.bundles.jmock)

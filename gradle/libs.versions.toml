@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-junit = "4.13.2"
+junit-jupiter = "5.11.4"
 hamcrest = "2.2"
 byte-buddy = "1.14.17"
 jmock = "2.13.1"
@@ -10,14 +10,13 @@ easymock = "5.2.0"
 mockito= "5.12.0"
 
 [libraries]
-junit = { module = "junit:junit", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrest" }
 byte-buddy = { module = "net.bytebuddy:byte-buddy", version.ref = "byte-buddy" }
-jmock-junit4 = { module = "org.jmock:jmock-junit4", version.ref = "jmock" }
 jmock-junit5 = { module = "org.jmock:jmock-junit5", version.ref = "jmock" }
 jmock-imposters = { module = "org.jmock:jmock-imposters", version.ref = "jmock" }
 easymock = { module = "org.easymock:easymock", version.ref = "easymock" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 
 [bundles]
-jmock = ["byte-buddy", "jmock-junit4", "jmock-junit5", "jmock-imposters"]
+jmock = ["byte-buddy", "jmock-junit5", "jmock-imposters"]
