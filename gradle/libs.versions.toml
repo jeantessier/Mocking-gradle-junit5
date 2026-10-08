@@ -1,10 +1,10 @@
 [versions]
-junit-jupiter = "6.0.1"
+junit-jupiter = "6.1.3"
 hamcrest = "3.0"
-byte-buddy = "1.18.3"
+byte-buddy = "1.18.14"
 jmock = "2.13.1"
-easymock = "5.6.0"
-mockito= "5.21.0"
+easymock = "5.7.0"
+mockito= "5.24.0"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
